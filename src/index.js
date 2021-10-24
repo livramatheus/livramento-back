@@ -5,6 +5,6 @@ const Projects = require('./routes/Projects');
 
 app.use(Projects);
 
-app.listen(3001, () => {
-    console.log("Listening on PORT 3001")
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Listening on PORT ${process.env.PORT}`)
 });
