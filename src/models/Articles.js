@@ -1,10 +1,10 @@
 const db = require('../config/db');
 
-const getAllProjects = () => {
+const getAllArticles = () => {
     const sql = `SELECT
                    *
                  FROM
-                   project;`;
+                   article;`;
 
     return new Promise((resolve, reject) => {
         db.query(
@@ -20,11 +20,11 @@ const getAllProjects = () => {
     });
 }
 
-const getProject = (id) => {
+const getArticle = (id) => {
     const sql = `SELECT
                    *
                  FROM
-                   project
+                   article
                  WHERE
                    id = ?;`;
 
@@ -39,13 +39,13 @@ const getProject = (id) => {
                 if (res[0]) {
                     resolve(res[0]);
                 }
-                reject('Project not found')
+                reject('Article not found')
             }
         })
     });
 }
 
 module.exports = {
-    getAllProjects,
-    getProject
+    getAllArticles,
+    getArticle
 }
