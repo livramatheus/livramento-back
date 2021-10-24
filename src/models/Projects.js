@@ -2,7 +2,12 @@ const db = require('../config/db');
 
 const getAllProjects = () => {
     const sql = `SELECT
-                   *
+                   id,
+                   title,
+                   launchdate,
+                   abstract,
+                   technologies,
+                   gitaddr
                  FROM
                    project;`;
 

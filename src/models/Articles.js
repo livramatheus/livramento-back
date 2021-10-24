@@ -2,7 +2,10 @@ const db = require('../config/db');
 
 const getAllArticles = () => {
     const sql = `SELECT
-                   *
+                   id,
+                   title,
+                   date,
+                   abstract
                  FROM
                    article;`;
 
